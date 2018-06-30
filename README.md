@@ -1,2 +1,2 @@
-# nameguru
-We can predict your name 
+# NameGuru
+We can predict your name.
