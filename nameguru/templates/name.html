@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <p class="text-center choose"><b>Choose the meaning of your name</b></p>
+<form action="" method="post">
+    {% csrf_token %}
+    <select class="form-control" name="meaning" id="meaning">
+        <option value="">Select</option>
+        {% for i in dts %}
+            <option value="{{i.name}}">{{i.meaning}}</option>
+        {% endfor %}
+    </select>
+    <p id="name"></p>
+</form>
+
+{% block javascript %}
+  <script>
+    $("#meaning").change(function () {
+      var meaning = $(this).val();
+
+      if(meaning){
+        $("#name").html("<div class='text-center'>Hey your name is: <h3>"+meaning+"</h3></div>")
+        $(".choose").hide();
+        $("#meaning").hide();
+      }
+
+    });
+  </script>
+{% endblock %}
+
+{% endblock %}

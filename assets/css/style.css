@@ -1,0 +1,26 @@
+body {
+    background-color: #ccc3 !important;
+}
+padding {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+}
+#funbox {
+    display: none;
+}
+select {
+    width: 50% !important;
+    margin: 0 auto !important;
+}
+input[type=text] {
+    width: 5%;
+    padding: 2px 8px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 18px;
+    text-transform: capitalize;
+    border: 1px solid #ccc;
+}
+.choose, #name {
+    margin-top: 50px;
+}

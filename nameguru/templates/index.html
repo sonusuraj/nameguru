@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <div class="padding col-sm-12 col-md-12">
+        <div class="jumbotron text-center">
+            <h1>NameGuru</h1>
+        </div>
+        <div class="text-center" id="instfun">
+            <h3>We can predict your name</h3>
+            <p>Is it sounds like magic?. Awesome!!</p>
+            <button type="button" class="btn btn-primary" id="namefun">Let's have fun</button>
+        </div>
+        <div class="text-center col-sm-12 col-md-6 col-md-offset-3" id="funbox">
+            <form action="/" method="post">
+                {% csrf_token %}
+            <div id="divreligion">
+                <h3>Select your Religion</h3>
+                <select class="form-control" name="religion" id="religion">
+                    <option value="">Select</option>
+                    <option value="h">Hindu</option>
+                </select>
+            </div>
+            <div id="divgender">
+                <h3>Select your Gender</h3>
+                <select class="form-control" name="gender" id="gender">
+                    <option value="">Select</option>
+                    <option value="m">Male</option>
+                    <option value="f">Female</option>
+                </select>
+            </div>
+            <div id="divfirstletter">
+                <h3>Select first letter of your name</h3>
+                <select class="form-control" name="firstletter" id="firstletter">
+                    <option value="">Select</option>
+                    {% for s in string %}
+                    <option value="{{s}}">{{s}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div id="divnofletters">
+                <h3>How many letters in your first name?</h3>
+                <select class="form-control" name="nofletters" id="nofletters">
+                    <option value="">Select</option>
+                    {% for i in arange %}
+                        <option value="{{i}}">{{i}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div id="divlettertimes">
+                <p>Type repeated letters of your name in appropriate box</p>
+                <div id="lettertimes"></div>
+            </div>
+            <div>
+                <br>
+                <input id="getnm" type="submit" name="nmsubmit" value="Get your name" class="btn btn-primary">
+            </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
